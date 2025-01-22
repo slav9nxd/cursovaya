@@ -1,83 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проект CCOS</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Информация о проекте</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Шапка -->
-    <header>
-        <div class="logo">ЦОДС Проект</div>
-        <nav>
-            <ul>
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#visualization">Визуализация</a></li>
-                <li><a href="#register">Регистрация</a></li>
-                <li><a href="#contact">Контакты</a></li>
-                <li><a href="welcome_page.html">Главная</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Шапка -->
+  <header>
+    <div class="logo-container">
+      <span class="site-title">Центр цифровой обработки сигналов</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="welcome_page.html">Главная</a></li>
+        <li><a href="index.html">О проекте</a></li>
+        <li><a href="registration.html">Регистрация</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <a href="accessible_welcome_page.html" class="accessibility-link">Версия для слабовидящих</a>
+  </header>
 
-    <!-- Приветственная страница -->
-    <section id="about" class="about">
-        <h1>О проекте</h1>
-        <p>Этот проект посвящен обработке сигналов и шифрованию. Мы применяем передовые методы для обеспечения безопасности данных.</p>
+  <!-- Основной контент -->
+  <main>
+    <section class="about animate-fade-in">
+      <h1>О проекте</h1>
+      <p>
+        Центр цифровой обработки сигналов занимается разработкой технологий обработки сигналов и шифрования. Мы обеспечиваем безопасность данных в любой сфере деятельности. Наши решения направлены на защиту информации от несанкционированного доступа, кибератак и потери данных. Мы используем передовые алгоритмы шифрования и современные подходы к обработке сигналов, что позволяет нашим клиентам быть уверенными в надёжности своих данных. Наша команда экспертов активно исследует и внедряет инновации, чтобы соответствовать самым высоким стандартам безопасности. Мы сотрудничаем с предприятиями, государственными учреждениями и частными лицами, помогая им защитить свои информационные системы. Основная наша цель – сделать цифровой мир безопаснее для всех.
+      </p>
     </section>
 
-    <!-- Визуализация -->
-    <section id="visualization" class="visualization">
-        <h2>Процесс шифрования</h2>
-        <p>Процесс шифрования данных можно представить следующим образом:</p>
-        <video controls>
-            <source src="assets/encryption-process.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео-тег.
-        </video>
+    <section class="video-section animate-fade-in">
+      <h2>Как работает наш проект</h2>
+      <video src="assets/demo.mp4" controls></video>
     </section>
 
-    <!-- Форма регистрации -->
-    <section id="register" class="registration">
-        <h2>Регистрация</h2>
-        <form>
-            <input type="text" placeholder="Имя" required>
-            <input type="date" placeholder="Дата рождения" required>
-            <select required>
-                <option value="">Выберите пол</option>
-                <option value="male">Мужской</option>
-                <option value="female">Женский</option>
-                <option value="other">Другой</option>
-            </select>
-            <input type="password" placeholder="Пароль" required>
-            <input type="email" placeholder="Электронная почта" required>
-            <input type="tel" placeholder="Телефон" required>
-            <select required>
-                <option value="">Удобный интервал для связи</option>
-                <option value="morning">Утро</option>
-                <option value="afternoon">День</option>
-                <option value="evening">Вечер</option>
-                <option value="night">Ночь</option>
-            </select>
-            <button type="submit">Зарегистрироваться</button>
-        </form>
+    <section class="contacts animate-fade-in">
+      <h2>Свяжитесь с нами</h2>
+      <form>
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш email" required>
+        <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
     </section>
+  </main>
 
-    <!-- Контакты -->
-    <section id="contact" class="contact">
-        <h2>Контакты</h2>
-        <form>
-            <input type="text" placeholder="Ваше имя">
-            <textarea placeholder="Ваше сообщение"></textarea>
-            <button type="submit">Отправить</button>
-        </form>
-    </section>
-    <footer>
-      © 2025 ЦОДС Проект. Все права защищены. 
-      <a href="#">Политика конфиденциальности</a> | 
-      <a href="#">Контакты</a>
-    </footer>
-  
+  <!-- Подвал -->
+  <footer>
+    © 2025 Центр цифровой обработки сигналов. Все права защищены.
+    <a href="terms.html" target="_blank">Пользовательское соглашение</a> |
+    <a href="https://t.me/slavabatut" target="_blank">Контакты</a>
+  </footer>
 </body>
 </html>

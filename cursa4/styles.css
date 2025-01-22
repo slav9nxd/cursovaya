@@ -1,240 +1,375 @@
 /* Основные стили */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Новый шрифт для основного контента */
   margin: 0;
   padding: 0;
-  background-image: url('assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #333;
+  background: url('assets/background.jpg') no-repeat center center/cover;
+  color: white;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Высота страницы равна высоте окна */
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 /* Шапка */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Высота шапки */
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: rgba(42, 42, 114, 0.8);
-  color: white;
-  padding: 20px;
-  gap: 15px;
 }
 
-header .logo {
-  font-size: 32px;
+header .logo-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header .site-title {
+  font-size: 22px;
   font-weight: bold;
-  flex-basis: 100%;
-  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+header nav {
+  position: absolute;
+  top: 50%; /* Центровка по вертикали */
+  left: 50%; /* Центровка по горизонтали */
+  transform: translate(-50%, -50%);
 }
 
 header nav ul {
   display: flex;
-  flex-wrap: wrap;
+  gap: 15px;
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center;
-  gap: 15px;
 }
 
 header nav ul li a {
-  font-size: 18px;
-  font-weight: bold;
   text-decoration: none;
   color: white;
-  padding: 12px 20px;
-  border: 2px solid white;
+  padding: 10px 15px; /* Увеличен размер текста кнопок */
   border-radius: 5px;
-  transition: all 0.3s ease;
-  display: block;
-  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 header nav ul li a:hover {
-  background-color: white;
-  color: rgba(42, 42, 114, 1);
-  border-color: rgba(42, 42, 114, 1);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f0a500;
 }
 
-/* Анимация появления секций */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-  padding: 40px;
-  margin: 20px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  color: #333;
+.accessibility-link {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: orange;
+  font-size: 20px;
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
-@keyframes fadeIn {
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Заголовки */
-h1, h2 {
-  color: #2a2a72;
-  font-size: 2rem;
-}
-
-/* Формы */
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid rgba(59, 108, 166, 0.8);
-  background-color: rgba(30, 58, 95, 0.5);
-  color: white;
-  font-size: 16px;
-}
-
-form button {
-  width: 100%;
-  background-color: rgba(42, 42, 114, 0.9);
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-form button:hover {
-  background-color: rgba(80, 80, 160, 0.9);
-}
-
-/* Визуализация */
-.visualization video {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-/* Кнопки */
-button, .welcome-button, .return-button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-button:hover, .welcome-button:hover, .return-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Приветственная страница */
-.welcome-page {
+/* Welcome Page */
+.hero {
+  height: 930px; /* Занимает оставшуюся высоту после шапки */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
   text-align: center;
+  background: rgba(0, 0, 0, 0.85);
 }
 
-.welcome-container {
-  background-color: rgba(0, 0, 0, 0.7); /* Затемненный фон */
-  padding: 40px;
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
   width: 90%;
 }
 
-.welcome-container h1 {
-  font-size: 36px;
+.hero-content h1 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #d6c3f3; /* Цвет текста */
+  color: #f0a500;
+  word-wrap: break-word; /* Перенос слов */
+  overflow-wrap: break-word;
 }
 
-.welcome-container p {
-  font-size: 18px;
+.hero-content p {
+  font-size: 1.1rem;
   margin-bottom: 20px;
-  color: #ffffff;
 }
 
-.welcome-button {
-  font-size: 16px;
+.cta-button {
+  display: inline-block;
+  background-color: #0078ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
-  color: #d6c3f3;
-  border: 2px solid #d6c3f3;
-  padding: 12px 20px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.welcome-button:hover {
-  background-color: #d6c3f3;
-  color: black;
+.cta-button:hover {
+  background-color: #005bb5;
 }
 
-/* Подвал */
-footer {
-  background-color: rgba(42, 42, 114, 0.9);
-  color: white;
-  padding: 20px;
+/* Index Page */
+.about {
+  padding: 40px 30px 50px;
   text-align: center;
-  font-size: 14px;
-  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  margin: 100px auto;
+  max-width: 1200px;
+  width: 90%;
+  color: white;
+}
+
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f0a500;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.video-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.video-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f0a500;
+}
+
+.video-section video {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contacts Section */
+.contacts {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.contacts h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f0a500;
+}
+
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contacts form input,
+.contacts form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  resize: none;
+}
+
+.contacts form input:focus,
+.contacts form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 120, 255, 0.7);
+  border: 1px solid #0078ff;
+}
+
+.contacts form button {
+  padding: 15px;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 105%; /* Подгонка под общий размер строки */
+  box-sizing: border-box; /* Учитываем границы */
+}
+
+.contacts form button:hover {
+  background-color: #005bb5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Registration Page */
+.download-section {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  margin: 130px auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.download-section h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #f0a500;
+}
+
+.download-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.download-form input {
+  margin: 5px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.download-form button {
+  margin-right: -22px;
+  padding: 10px 20px;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-form button:hover {
+  background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: auto;
 }
 
 footer a {
-  color: #d6c3f3;
-  text-decoration: underline;
+  color: #0078ff;
+  text-decoration: none;
 }
 
 footer a:hover {
-  text-decoration: none;
-  color: white;
+  text-decoration: underline;
 }
-/* Адаптивная верстка */
-@media (max-width: 1199px) {
-  header {
-      flex-wrap: wrap;
-      gap: 10px;
-  }
-
-  section {
-      padding: 30px;
-  }
-
-  h1, h2 {
-      font-size: 1.8rem;
-  }
+.terms-container {
+  background-color: rgba(0, 0, 0, 0.85); /* Полупрозрачный черный фон */
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень вокруг */
+  max-width: 900px;
+  margin: 70px auto; /* Центровка блока */
+  color: white; /* Белый текст */
+  text-align: left;
+  line-height: 1.6;
 }
 
+.terms-container h1, .terms-container h2 {
+  color: #f0a500; /* Золотой цвет для заголовков */
+  margin-bottom: 20px;
+}
+
+.terms-container a {
+  color: #0078ff; /* Цвет ссылки */
+  text-decoration: underline;
+}
+
+.terms-container a:hover {
+  color: #005bb5;
+}
+
+
+/* Адаптивность */
 @media (max-width: 768px) {
-  header .logo {
-      font-size: 20px;
-  }
-
   header nav ul {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  section {
-      padding: 20px;
-      margin: 10px;
+  header nav {
+    transform: translateY(-50%);
   }
 
-  h1, h2 {
-      font-size: 1.5rem;
+  .hero-content h1 {
+    font-size: 1.8rem; /* Уменьшение размера текста для маленьких экранов */
   }
 
-  button, .welcome-button, .return-button {
-      padding: 10px 15px;
-      font-size: 14px;
+  .hero-content p {
+    font-size: 1rem;
   }
+  
 }

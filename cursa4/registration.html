@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Добро пожаловать в ЦЦОС</title>
+  <title>Регистрация</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
         <li><a href="welcome_page.html">Главная</a></li>
         <li><a href="index.html">О проекте</a></li>
         <li><a href="registration.html">Регистрация</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="#contacts">Контакты</a></li>
       </ul>
     </nav>
     <a href="accessible_welcome_page.html" class="accessibility-link">Версия для слабовидящих</a>
@@ -25,11 +25,18 @@
 
   <!-- Основной контент -->
   <main>
-    <section class="hero animate-fade-in">
-      <div class="hero-content">
-        <h1>Добро пожаловать в Центр цифровой обработки сигналов</h1>
-        <p>Современные технологии обработки сигналов и шифрования для защиты данных.</p>
-        <a href="index.html" class="cta-button">Узнать больше</a>
+    <section class="download-section">
+      <h1>Скачать проект</h1>
+      <form class="download-form">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Войти</button>
+      </form>
+      <div class="download-link">
+        <p>После входа вы сможете скачать файлы проекта:</p>
+        <a href="files/project.zip" download>Скачать проект</a>
       </div>
     </section>
   </main>
