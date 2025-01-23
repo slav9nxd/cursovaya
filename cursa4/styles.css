@@ -1,6 +1,6 @@
 /* Основные стили */
 body {
-  font-family: 'Roboto', sans-serif; /* Новый шрифт для основного контента */
+  font-family: 'Roboto', sans-serif; 
   margin: 0;
   padding: 0;
   background: url('assets/background.jpg') no-repeat center center/cover;
@@ -8,10 +8,10 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Высота страницы равна высоте окна */
+  min-height: 100vh; 
 }
 
-/* Анимация */
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -27,13 +27,13 @@ body {
   animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Шапка */
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Высота шапки */
+  height: 60px; 
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -58,8 +58,8 @@ header .site-title {
 
 header nav {
   position: absolute;
-  top: 50%; /* Центровка по вертикали */
-  left: 50%; /* Центровка по горизонтали */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%);
 }
 
@@ -74,7 +74,7 @@ header nav ul {
 header nav ul li a {
   text-decoration: none;
   color: white;
-  padding: 10px 15px; /* Увеличен размер текста кнопок */
+  padding: 10px 15px; 
   border-radius: 5px;
   font-weight: bold;
   font-size: 16px;
@@ -98,9 +98,9 @@ header nav ul li a:hover {
   white-space: nowrap;
 }
 
-/* Welcome Page */
+
 .hero {
-  height: 930px; /* Занимает оставшуюся высоту после шапки */
+  height: 930px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +121,7 @@ header nav ul li a:hover {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #f0a500;
-  word-wrap: break-word; /* Перенос слов */
+  word-wrap: break-word; 
   overflow-wrap: break-word;
 }
 
@@ -147,7 +147,7 @@ header nav ul li a:hover {
   background-color: #005bb5;
 }
 
-/* Index Page */
+
 .about {
   padding: 40px 30px 50px;
   text-align: center;
@@ -192,7 +192,7 @@ header nav ul li a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Contacts Section */
+
 .contacts {
   padding: 50px 20px;
   text-align: center;
@@ -247,8 +247,8 @@ header nav ul li a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 105%; /* Подгонка под общий размер строки */
-  box-sizing: border-box; /* Учитываем границы */
+  width: 105%; 
+  box-sizing: border-box; 
 }
 
 .contacts form button:hover {
@@ -256,7 +256,7 @@ header nav ul li a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Registration Page */
+
 .download-section {
   padding: 100px 20px;
   text-align: center;
@@ -308,7 +308,7 @@ header nav ul li a:hover {
   background-color: #005bb5;
 }
 
-/* Footer */
+
 footer {
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
@@ -327,19 +327,19 @@ footer a:hover {
   text-decoration: underline;
 }
 .terms-container {
-  background-color: rgba(0, 0, 0, 0.85); /* Полупрозрачный черный фон */
+  background-color: rgba(0, 0, 0, 0.85); 
   padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень вокруг */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
   max-width: 900px;
-  margin: 70px auto; /* Центровка блока */
-  color: white; /* Белый текст */
+  margin: 70px auto; 
+  color: white; 
   text-align: left;
   line-height: 1.6;
 }
 
 .terms-container h1, .terms-container h2 {
-  color: #f0a500; /* Золотой цвет для заголовков */
+  color: #f0a500; 
   margin-bottom: 20px;
 }
 
@@ -353,23 +353,106 @@ footer a:hover {
 }
 
 
-/* Адаптивность */
-@media (max-width: 768px) {
+
+@media (max-width: 1000px) {
   header nav ul {
-    flex-direction: column;
     gap: 10px;
   }
 
   header nav {
-    transform: translateY(-50%);
+    flex-direction: column;
+  }
+
+  header nav ul li a {
+    padding: 8px 12px;
+    font-size: 14px;
   }
 
   .hero-content h1 {
-    font-size: 1.8rem; /* Уменьшение размера текста для маленьких экранов */
+    font-size: 2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
   }
-  
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav ul li a {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .hero-content {
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  header nav ul li a {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .hero {
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .video-section video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; 
 }
